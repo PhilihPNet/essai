@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head>
+	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+  <script type="text/javascript" src="./datas/csvSession2_IFA.json"></script>
+
+	<title>Annuaire WebDev</title>
+<style>
+</style>
+<script>
+String.prototype.ucfirst = function()
+{
+    return this.charAt(0).toUpperCase() + this.substr(1);
+}
+function affiche(index){
+liste.forEach(function(e){
+	if(index==e.id)
+	 document.body.innerHTML+=(("<u><b>"+e.Nom.toUpperCase() +"&nbsp;"+e.Prenom.ucfirst() +"<b></u><br>"+"Javascript : "+e.Javascript +"<br>"+"site_pref : "+e.site_pref +"<br>"+"Pourquoi_S : "+e.Pourquoi_S +"<br>"+"app_pref : "+e.app_pref +"<br>"+"Pourquoi_A : "+e.Pourquoi_A +"<br>"+"before_IFA : "+e.before_IFA +"<br>"+"pourquoi_IFA : "+e.pourquoi_IFA +"<br>"+"Mail : <a href='mailto:"+e.Mail+"'>"+e.Mail+"</>"))
+	});
+	}
+</script>
+<body>
+<h1>Annuaire WebDev</h1>
+</body>
+<a onclick="history.go(-1);" href="#">Retour</a></br>
+  <script>
+  var a=new URLSearchParams(window.location.search.slice(1));
+  document.body.innerHTML+=decodeURIComponent(a.get("id"))+'<br>';
+  affiche(a.get("id"));
+  </script>
+</html>
